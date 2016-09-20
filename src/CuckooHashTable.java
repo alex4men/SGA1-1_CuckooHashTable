@@ -138,12 +138,12 @@ public class CuckooHashTable<K>
     {
         if (arrayNum == 0) {
             int hashVal = x.hashCode();
-            hashVal = (hashVal & 0x7fffffff) % array.length;
+            hashVal = (hashVal & 0x7fffffff) % array[arrayNum].length;
 
             return hashVal;
         } else {
             int hashVal = x.hashCode();
-            hashVal = (hashVal & 0x7fffffff) % array.length;
+            hashVal = (hashVal & 0x7fffffff) % array[arrayNum].length;
 
             return hashVal;
         }
@@ -200,9 +200,10 @@ public class CuckooHashTable<K>
     {
         for (int i = 0; i < NUM_OF_ARRAYS; i++) {
             int pos = hash(x, i);
-            System.out.println("Position is: " + pos);
-            if (array[i][pos] != null && array[i][pos].equals(x))
+            if (array[i][pos] != null && array[i][pos].equals(x)) {
+                System.out.println("Position is: " + i + "." + pos);
                 return (i + 1) * pos;
+            }
         }
 
         return -1;
