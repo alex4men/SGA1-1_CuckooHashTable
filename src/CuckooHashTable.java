@@ -176,8 +176,7 @@ public class CuckooHashTable<Key> {
         for (int i = 0; i < numOfArrays; i++) {
             int pos = hash(x, i);
             if (array[i][pos] != null && array[i][pos].equals(x)) {
-                int tmp = i + 1;
-                System.out.println("Position is: " + tmp + "." + pos);
+                System.out.println("Position is: " + i + "." + pos);
                 return (i + 1) * pos;
             }
         }
