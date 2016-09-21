@@ -17,7 +17,11 @@ public class Main {
             } else if (input.hasNext("exit")) {
                 break;
             } else {
-                H.insert(input.next());
+                try {
+                    H.insert(input.next());
+                } catch (Exception e) {
+                    System.out.println("Fatal error: " + e);
+                }
             }
         }
     }

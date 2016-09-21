@@ -138,7 +138,7 @@ public class CuckooHashTable<Key> {
     }
 
     private int hash(Key x, int arrayNum) {
-        return ((x.hashCode() & 0x7fffffff) * hashMultipliers[arrayNum]) % currentTableSize;
+        return ((x.hashCode() * hashMultipliers[arrayNum]) & 0x7fffffff) % currentTableSize;
     }
 
     private void rehash() {
