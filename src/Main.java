@@ -10,7 +10,7 @@ public class Main {
         CuckooHashTable<String> H = new CuckooHashTable<>();
 
         while (true) {
-            System.out.print("Enter something: ");
+            System.out.print("Enter something (keywords: \"print\", \"exit\"): ");
             if (input.hasNext("print")) {
                 input.next();
                 H.printOutContent();
