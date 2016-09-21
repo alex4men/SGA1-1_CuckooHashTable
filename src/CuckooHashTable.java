@@ -42,9 +42,11 @@ public class CuckooHashTable<Key> {
         int insertAttempts = 0;
         int rehashesAttempts = 0;
 
+
+        // TODO: 21.09.2016 1 2 3
         while (true) {
-            if (occupiedCellsCount[0] >= array[0].length * maxLoadFactor ||
-                    occupiedCellsCount[1] >= array[1].length * maxLoadFactor || rehashesAttempts >= maxRehashesThrshld) {
+            if (occupiedCellsCount[0] >= Math.ceil(array[0].length * maxLoadFactor) ||
+                    occupiedCellsCount[1] >= Math.ceil(array[1].length * maxLoadFactor) || rehashesAttempts >= maxRehashesThrshld) {
                 expand();
                 insertAttempts = 0;
                 rehashesAttempts = 0;

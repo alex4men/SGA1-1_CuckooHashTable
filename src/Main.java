@@ -8,9 +8,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         CuckooHashTable<String> H = new CuckooHashTable<>();
-
+        System.out.println("Enter keyword \"print\" to print current state of program. Enter \"exit\" for closing  the program. ");
         while (true) {
-            System.out.print("Enter something (keywords: \"print\", \"exit\"): ");
+            System.out.print("Enter new key: ");
             if (input.hasNext("print")) {
                 input.next();
                 H.printOutContent();
